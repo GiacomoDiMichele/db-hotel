@@ -1,0 +1,18 @@
+SELECT * FROM `ospiti` WHERE document_type = 'CI' => QUERY_1
+
+SELECT * FROM `ospiti` WHERE YEAR(date_of_birth) > 1988 => QUERY_2
+
+SELECT * FROM `ospiti` WHERE name LIKE 'D%' => QUERY_4
+
+SELECT * FROM `pagamenti` WHERE status = 'accepted' => QUERY_5
+
+SELECT MAX(PRICE) FROM pagamenti => QUERY_6
+
+SELECT * FROM `ospiti` WHERE document_type = 'Driver License' AND YEAR(date_of_birth) > '1975 => QUERY_7
+
+SELECT * FROM `paganti` WHERE ospite_id IS NOT NULL => QUERY_8
+
+SELECT SUM(beds) FROM `stanze` => QUERY_9
+
+
+

@@ -16,3 +16,23 @@ SELECT SUM(beds) FROM `stanze` => QUERY_9
 
 
 
+QUERY (2) - JOIN / BY GROUP 
+
+SELECT COUNT(id) AS num_ospiti, YEAR(date_of_birth) AS anno_di_nascita FROM `ospiti` GROUP BY YEAR(date_of_birth) => query_1
+
+SELECT SUM(price) AS somma_prezzo, `status` AS mod_pagamento FROM pagamenti GROUP BY status ==> query_2
+
+SELECT COUNT(stanza_id) AS num_prenotazioni, `stanza_id` AS numero_stanza FROM `prenotazioni` GROUP BY stanza_id => query_3
+
+SELECT COUNT(ospite_id) AS num_prenotazioni, ospite_id FROM `prenotazioni_has_ospiti` GROUP BY ospite_id => query_4
+
+SELECT COUNT(ospite_id) AS num_max_prenotazioni FROM `prenotazioni_has_ospiti` GROUP BY ospite_id => query_5
+
+-- FINE BY GROUP --
+
+
+
+
+
+
+

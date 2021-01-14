@@ -26,9 +26,17 @@ SELECT COUNT(stanza_id) AS num_prenotazioni, `stanza_id` AS numero_stanza FROM `
 
 SELECT COUNT(ospite_id) AS num_prenotazioni, ospite_id FROM `prenotazioni_has_ospiti` GROUP BY ospite_id => query_4
 
-SELECT COUNT(ospite_id) AS num_max_prenotazioni FROM `prenotazioni_has_ospiti` GROUP BY ospite_id => query_5
 
 -- FINE BY GROUP --
+
+SELECT ospiti.name, ospiti.lastname, COUNT(*) AS num_prenotazioni 
+FROM ospiti
+JOIN prenotazioni_has_ospiti 
+ON ospiti.id = prenotazioni.ospite_id 
+GROUP BY ospiti.name, ospiti.lastname 
+HAVING num_prenotazioni > 2 
+
+*JOIN - 1 ES. //
 
 
 
